@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中午要吃什麼?</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./img/logo/rice2.png">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+
+</head>
+
+<body>
+
+    
+        <div id="app">
+        <h1>{{title}}</h1>
+
+        <!-- 包住主角與配角的圖片大外框 -->
+        <div class="role">
+
+            <div class="role1">
+                <h2>{{rolet1itle}}</h2>
+                <img v-for="(role1img,index) in animalImg" :src="getImgsrc(role1img)" :key="index"
+                    :class="{'choosebox1' : selectedrole1 === index}" @click="selectrole1(index)" >
+            </div> <!-- .role1 結束標籤 -->
+
+
+            <div class="role2" >
+                <h2>{{rolet2itle}}</h2>
+                <img v-for="(role2img,index) in animalImg2" :src="getImgsrc2(role2img)" :key="index"
+                    :class="{'choosebox2' : selectedrole2 === index}" @click="selectrole2(index)" >
+            </div>
+
+        </div> <!-- .role結束標籤 -->
+
+
+        <div>
+            <button class="roleBtn" @click="checkroles"> 角色確認</button>
+        </div>
+
+        <script src="./js/page1.js"></script>
+
+
+    </div>
+    </body>
+
+</html>
